@@ -1,3 +1,6 @@
+
+#vallabh,shubhang,rishikesh koli
+
 from random import seed
 from random import randrange
 from csv import reader
@@ -15,7 +18,7 @@ def load_csv(filename):
 	return dataset
 
 # Convert string column to float
-def str_column_to_float(dataset, column):
+def str_to_float(dataset, column):
 	for row in dataset:
 		row[column] = float(row[column].strip())
 
@@ -90,7 +93,7 @@ seed(1)
 filename = 'insurance.csv'
 dataset = load_csv(filename)
 for i in range(len(dataset[0])):
-	str_column_to_float(dataset, i)
+	str_to_float(dataset, i)
 # evaluate algorithm
 split = 0.6
 rmse = evaluate_algorithm(dataset, simple_linear_regression, split)
@@ -99,7 +102,7 @@ print('RMSE: %.3f' % (rmse))
 filename = 'Pizza Franchise.csv'
 dataset = load_csv(filename)
 for i in range(len(dataset[0])):
-	str_column_to_float(dataset, i)
+	str_to_float(dataset, i)
 # evaluate algorithm
 split = 0.6
 rmse = evaluate_algorithm(dataset, simple_linear_regression, split)
